@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif}.title{font-size:24px;font-weight:700;fill:#222}.subtitle{font-size:16px;fill:#333}.box{rx:8;ry:8;stroke-width:2}.person{fill:#08427b;stroke:#052e56}.system{fill:#1168bd;stroke:#0b4f8a}.external{fill:#666;stroke:#444}.device{fill:#6b7280;stroke:#4b5563}.label{font-size:16px;font-weight:700;fill:#fff}.tag{font-size:13px;fill:#fff}.desc{font-size:12px;fill:#fff}.edge{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arrow)}.edgeText{font-size:12px;fill:#222}
+    </style>
+  </defs>
+  <text x="750" y="48" text-anchor="middle" class="title">C4 Level 1 - System Context Diagram</text>
+  <text x="750" y="78" text-anchor="middle" class="subtitle">Cloud-Based Security and Monitoring System</text>
+  <rect x="90" y="180" width="280" height="120" class="box person"/><text x="230" y="214" text-anchor="middle" class="label">User</text><text x="230" y="240" text-anchor="middle" class="tag">[Person]</text><text x="230" y="266" text-anchor="middle" class="desc">Registers sensors, monitors status,</text><text x="230" y="286" text-anchor="middle" class="desc">views alerts, pays monthly fee</text>
+  <rect x="90" y="520" width="280" height="115" class="box device"/><text x="230" y="554" text-anchor="middle" class="label">Door and Motion Sensors</text><text x="230" y="580" text-anchor="middle" class="tag">[External Devices]</text><text x="230" y="606" text-anchor="middle" class="desc">Send readings and breach events</text>
+  <rect x="560" y="350" width="400" height="150" class="box system"/><text x="760" y="388" text-anchor="middle" class="label">Security Monitoring System</text><text x="760" y="414" text-anchor="middle" class="tag">[Software System]</text><text x="760" y="442" text-anchor="middle" class="desc">Collects sensor data, stores history,</text><text x="760" y="462" text-anchor="middle" class="desc">shows status, sends breach alerts, bills users</text>
+  <rect x="1130" y="160" width="290" height="105" class="box external"/><text x="1275" y="194" text-anchor="middle" class="label">Keycloak</text><text x="1275" y="220" text-anchor="middle" class="tag">[External System]</text><text x="1275" y="245" text-anchor="middle" class="desc">Authentication and access management</text>
+  <rect x="1130" y="350" width="290" height="105" class="box external"/><text x="1275" y="384" text-anchor="middle" class="label">Payment Gateway</text><text x="1275" y="410" text-anchor="middle" class="tag">[External System]</text><text x="1275" y="435" text-anchor="middle" class="desc">Processes monthly payments</text>
+  <rect x="1130" y="540" width="290" height="105" class="box external"/><text x="1275" y="574" text-anchor="middle" class="label">Email Service</text><text x="1275" y="600" text-anchor="middle" class="tag">[External System]</text><text x="1275" y="625" text-anchor="middle" class="desc">Sends breach notification emails</text>
+  <path d="M370 240 H460 V388 H560" class="edge"/><text x="400" y="228" class="edgeText">Uses web portal/mobile app</text>
+  <path d="M370 578 H460 V462 H560" class="edge"/><text x="390" y="566" class="edgeText">Sends sensor readings</text>
+  <path d="M960 390 H1040 V212 H1130" class="edge"/><text x="990" y="200" class="edgeText">Authenticates users</text>
+  <path d="M960 425 H1130" class="edge"/><text x="990" y="412" class="edgeText">Processes payments</text>
+  <path d="M960 462 H1040 V592 H1130" class="edge"/><text x="990" y="580" class="edgeText">Sends email alerts</text>
+</svg>

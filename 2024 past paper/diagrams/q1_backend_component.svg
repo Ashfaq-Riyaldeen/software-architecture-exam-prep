@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif}.title{font-size:24px;font-weight:700;fill:#222}.boundary{fill:#f5f7fa;stroke:#444;stroke-width:2}.btitle{font-size:16px;font-weight:700;fill:#333}.box{rx:8;ry:8;stroke-width:2}.client{fill:#438dd5;stroke:#2d6ca2}.component{fill:#85BBF0;stroke:#2D6CA2}.data{fill:#f5a623;stroke:#b96e00}.external{fill:#666;stroke:#444}.label{font-size:15px;font-weight:700;fill:#fff}.tag{font-size:12px;fill:#fff}.desc{font-size:11px;fill:#fff}.black{fill:#111}.edge{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arrow)}.edgeText{font-size:12px;fill:#222}
+    </style>
+  </defs>
+  <text x="750" y="52" text-anchor="middle" class="title">C4 Level 3 - Backend REST API Component Diagram</text>
+  <rect x="65" y="170" width="230" height="95" class="box client"/><text x="180" y="204" text-anchor="middle" class="label">Mobile App / SPA</text><text x="180" y="229" text-anchor="middle" class="tag">[Containers]</text>
+  <rect x="380" y="105" width="720" height="710" class="boundary"/><text x="740" y="132" text-anchor="middle" class="btitle">Backend REST API [Container]</text>
+  <rect x="430" y="180" width="230" height="95" class="box component"/><text x="545" y="212" text-anchor="middle" class="label">API Controllers</text><text x="545" y="237" text-anchor="middle" class="tag">[Component]</text><text x="545" y="259" text-anchor="middle" class="desc">REST endpoints and request mapping</text>
+  <rect x="735" y="180" width="230" height="95" class="box component"/><text x="850" y="212" text-anchor="middle" class="label">Auth Component</text><text x="850" y="237" text-anchor="middle" class="tag">[Component]</text><text x="850" y="259" text-anchor="middle" class="desc">Token validation and authorization</text>
+  <rect x="430" y="340" width="230" height="95" class="box component"/><text x="545" y="372" text-anchor="middle" class="label">Sensor Management</text><text x="545" y="397" text-anchor="middle" class="tag">[Component]</text><text x="545" y="419" text-anchor="middle" class="desc">Register sensors and status</text>
+  <rect x="735" y="340" width="230" height="95" class="box component"/><text x="850" y="372" text-anchor="middle" class="label">Alert Management</text><text x="850" y="397" text-anchor="middle" class="tag">[Component]</text><text x="850" y="419" text-anchor="middle" class="desc">Historical alerts and breach records</text>
+  <rect x="430" y="500" width="230" height="95" class="box component"/><text x="545" y="532" text-anchor="middle" class="label">Billing Component</text><text x="545" y="557" text-anchor="middle" class="tag">[Component]</text><text x="545" y="579" text-anchor="middle" class="desc">Monthly fee calculation</text>
+  <rect x="735" y="500" width="230" height="95" class="box component"/><text x="850" y="532" text-anchor="middle" class="label">Reporting Component</text><text x="850" y="557" text-anchor="middle" class="tag">[Component]</text><text x="850" y="579" text-anchor="middle" class="desc">Sensor history and alert views</text>
+  <rect x="585" y="660" width="230" height="95" class="box component"/><text x="700" y="692" text-anchor="middle" class="label">Integration Adapters</text><text x="700" y="717" text-anchor="middle" class="tag">[Component]</text><text x="700" y="739" text-anchor="middle" class="desc">Payment, email, identity APIs</text>
+  <rect x="1180" y="190" width="230" height="95" class="box external"/><text x="1295" y="224" text-anchor="middle" class="label">Keycloak</text><text x="1295" y="249" text-anchor="middle" class="tag">[External System]</text>
+  <rect x="1180" y="385" width="230" height="95" class="box data"/><text x="1295" y="419" text-anchor="middle" class="label black">Cloud Database</text><text x="1295" y="444" text-anchor="middle" class="tag black">[Database]</text>
+  <rect x="1180" y="580" width="230" height="95" class="box external"/><text x="1295" y="614" text-anchor="middle" class="label">Payment / Email APIs</text><text x="1295" y="639" text-anchor="middle" class="tag">[External Systems]</text>
+  <path d="M295 218 H430" class="edge"/><text x="315" y="206" class="edgeText">HTTPS requests</text>
+  <path d="M660 228 H735" class="edge"/><path d="M545 275 V340" class="edge"/><path d="M660 388 H735" class="edge"/><path d="M545 435 V500" class="edge"/><path d="M850 435 V500" class="edge"/>
+  <path d="M545 595 V625 H700 V660" class="edge"/><path d="M850 595 V625 H700 V660" class="edge"/>
+  <path d="M965 228 H1180" class="edge"/><text x="1000" y="216" class="edgeText">Validates tokens</text>
+  <path d="M965 388 H1180" class="edge"/><text x="1000" y="376" class="edgeText">Reads/writes data</text>
+  <path d="M815 708 H1180 V628" class="edge"/><text x="1000" y="696" class="edgeText">Calls external APIs</text>
+</svg>

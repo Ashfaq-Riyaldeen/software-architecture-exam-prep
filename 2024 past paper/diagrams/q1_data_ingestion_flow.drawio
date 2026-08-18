@@ -1,0 +1,22 @@
+<mxfile host="app.diagrams.net" modified="2026-08-18T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="q1-data-ingestion-flow" name="Q1 Data Ingestion Flow">
+    <mxGraphModel dx="1400" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Data Flow - Data Ingestion Component" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="350" y="25" width="700" height="40" as="geometry"/></mxCell>
+        <mxCell id="sensors" value="&lt;b&gt;Sensors&lt;/b&gt;&lt;br&gt;Door / motion readings" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#6B7280;strokeColor=#4B5563;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1"><mxGeometry x="60" y="260" width="190" height="90" as="geometry"/></mxCell>
+        <mxCell id="endpoint" value="&lt;b&gt;Ingestion Endpoint&lt;/b&gt;&lt;br&gt;Receive reading" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1"><mxGeometry x="330" y="260" width="190" height="90" as="geometry"/></mxCell>
+        <mxCell id="validate" value="&lt;b&gt;Validate and Normalize&lt;/b&gt;&lt;br&gt;Check sensor, format data" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1"><mxGeometry x="600" y="260" width="190" height="90" as="geometry"/></mxCell>
+        <mxCell id="detect" value="&lt;b&gt;Breach Detection&lt;/b&gt;&lt;br&gt;Apply alert rules" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1"><mxGeometry x="870" y="260" width="190" height="90" as="geometry"/></mxCell>
+        <mxCell id="db" value="&lt;b&gt;Cloud Database&lt;/b&gt;&lt;br&gt;Store reading and alert" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F5A623;strokeColor=#B96E00;fontColor=#111111;fontSize=13;spacing=8;" vertex="1" parent="1"><mxGeometry x="1140" y="150" width="200" height="90" as="geometry"/></mxCell>
+        <mxCell id="email" value="&lt;b&gt;Email Service&lt;/b&gt;&lt;br&gt;Send breach alert" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1"><mxGeometry x="1140" y="380" width="200" height="90" as="geometry"/></mxCell>
+        <mxCell id="e1" value="Sensor event" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="sensors" target="endpoint"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Raw reading" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="endpoint" target="validate"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Clean reading" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="validate" target="detect"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Persist data" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="detect" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="If breach, alert event" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="detect" target="email"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

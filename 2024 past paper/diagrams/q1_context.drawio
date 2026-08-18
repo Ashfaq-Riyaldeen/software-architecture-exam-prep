@@ -1,0 +1,23 @@
+<mxfile host="app.diagrams.net" modified="2026-08-18T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="q1-context" name="Q1 C4 Context">
+    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="C4 Level 1 - System Context Diagram" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="430" y="25" width="640" height="40" as="geometry"/></mxCell>
+        <mxCell id="subtitle" value="Cloud-Based Security and Monitoring System" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1"><mxGeometry x="430" y="65" width="640" height="30" as="geometry"/></mxCell>
+        <mxCell id="user" value="&lt;b&gt;User&lt;/b&gt;&lt;br&gt;[Person]&lt;br&gt;Registers sensors, monitors status, views alerts, pays monthly fee" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1"><mxGeometry x="90" y="180" width="280" height="120" as="geometry"/></mxCell>
+        <mxCell id="sensors" value="&lt;b&gt;Door and Motion Sensors&lt;/b&gt;&lt;br&gt;[External Devices]&lt;br&gt;Send readings and breach events" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#6B7280;strokeColor=#4B5563;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1"><mxGeometry x="90" y="520" width="280" height="115" as="geometry"/></mxCell>
+        <mxCell id="system" value="&lt;b&gt;Security Monitoring System&lt;/b&gt;&lt;br&gt;[Software System]&lt;br&gt;Collects sensor data, stores history, shows status, sends breach alerts, and bills users" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=15;spacing=10;" vertex="1" parent="1"><mxGeometry x="560" y="350" width="400" height="150" as="geometry"/></mxCell>
+        <mxCell id="keycloak" value="&lt;b&gt;Keycloak&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Authentication and access management" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1"><mxGeometry x="1130" y="160" width="290" height="105" as="geometry"/></mxCell>
+        <mxCell id="payment" value="&lt;b&gt;Payment Gateway&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Processes monthly payments" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1"><mxGeometry x="1130" y="350" width="290" height="105" as="geometry"/></mxCell>
+        <mxCell id="email" value="&lt;b&gt;Email Service&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Sends breach notification emails" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1"><mxGeometry x="1130" y="540" width="290" height="105" as="geometry"/></mxCell>
+        <mxCell id="e1" value="Uses web portal/mobile app" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="user" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Sends sensor readings" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="sensors" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Authenticates users" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="system" target="keycloak"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Processes payments" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="system" target="payment"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Sends email alerts" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="system" target="email"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
