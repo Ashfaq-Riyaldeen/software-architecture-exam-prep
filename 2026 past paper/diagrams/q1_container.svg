@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="1000" viewBox="0 0 1650 1000">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif}.title{font-size:24px;font-weight:700;fill:#222}.boundary{fill:#f5f7fa;stroke:#444;stroke-width:2}.btitle{font-size:16px;font-weight:700;fill:#333}.box{rx:8;ry:8;stroke-width:2}.person{fill:#08427b;stroke:#052e56}.app{fill:#438dd5;stroke:#2d6ca2}.backend{fill:#1168bd;stroke:#0b4f8a}.data{fill:#f5a623;stroke:#b96e00}.queue{fill:#2e7d32;stroke:#1b5e20}.external{fill:#666;stroke:#444}.device{fill:#6b7280;stroke:#4b5563}.label{font-size:15px;font-weight:700;fill:#fff}.tag{font-size:12px;fill:#fff}.desc{font-size:11px;fill:#fff}.black{fill:#111}.edge{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arrow)}.edgeText{font-size:12px;fill:#222}
+    </style>
+  </defs>
+  <text x="825" y="52" text-anchor="middle" class="title">C4 Level 2 - Container Diagram</text>
+  <rect x="55" y="150" width="210" height="80" class="box person"/><text x="160" y="183" text-anchor="middle" class="label">Passenger</text><text x="160" y="208" text-anchor="middle" class="tag">[Person]</text>
+  <rect x="55" y="455" width="210" height="80" class="box person"/><text x="160" y="488" text-anchor="middle" class="label">Conductor</text><text x="160" y="513" text-anchor="middle" class="tag">[Person]</text>
+  <rect x="55" y="740" width="210" height="85" class="box person"/><text x="160" y="773" text-anchor="middle" class="label">Transport Administrator</text><text x="160" y="798" text-anchor="middle" class="tag">[Person]</text>
+  <rect x="330" y="105" width="930" height="770" class="boundary"/><text x="795" y="130" text-anchor="middle" class="btitle">Lanka Metro Transit Platform [Software System]</text>
+  <rect x="380" y="185" width="255" height="115" class="box app"/><text x="507" y="215" text-anchor="middle" class="label">Passenger Mobile App</text><text x="507" y="240" text-anchor="middle" class="tag">[Container: Mobile Application]</text><text x="507" y="264" text-anchor="middle" class="desc">Routes, live map, tickets, notifications</text>
+  <rect x="380" y="440" width="255" height="120" class="box app"/><text x="507" y="470" text-anchor="middle" class="label">Handheld Ticketing App</text><text x="507" y="495" text-anchor="middle" class="tag">[Container: Device Application]</text><text x="507" y="519" text-anchor="middle" class="desc">QR validation, offline store, sync</text>
+  <rect x="380" y="690" width="255" height="120" class="box app"/><text x="507" y="720" text-anchor="middle" class="label">Admin Web Dashboard</text><text x="507" y="745" text-anchor="middle" class="tag">[Container: Web Application]</text><text x="507" y="769" text-anchor="middle" class="desc">Monitoring, pricing, reports, failures</text>
+  <rect x="695" y="340" width="270" height="140" class="box backend"/><text x="830" y="370" text-anchor="middle" class="label">REST Backend API</text><text x="830" y="395" text-anchor="middle" class="tag">[Container: Application]</text><text x="830" y="419" text-anchor="middle" class="desc">REST APIs, authentication, workflow coordination</text><text x="830" y="439" text-anchor="middle" class="desc">for transport, ticketing, payments, admin</text>
+  <rect x="695" y="560" width="270" height="130" class="box backend"/><text x="830" y="590" text-anchor="middle" class="label">Background Worker</text><text x="830" y="615" text-anchor="middle" class="tag">[Container: Application]</text><text x="830" y="639" text-anchor="middle" class="desc">Queued processing, retries, reports, alerts</text>
+  <rect x="1005" y="215" width="220" height="120" class="box data"/><text x="1115" y="248" text-anchor="middle" class="label black">Operational Database</text><text x="1115" y="273" text-anchor="middle" class="tag black">[Container: Database]</text><text x="1115" y="297" text-anchor="middle" class="desc black">Users, routes, tickets, payments</text>
+  <rect x="1005" y="395" width="220" height="110" class="box data"/><text x="1115" y="428" text-anchor="middle" class="label black">Real-Time Cache</text><text x="1115" y="453" text-anchor="middle" class="tag black">[Container: Data Store]</text><text x="1115" y="477" text-anchor="middle" class="desc black">Live bus positions and ETAs</text>
+  <rect x="1005" y="570" width="220" height="115" class="box queue"/><text x="1115" y="603" text-anchor="middle" class="label">Message Queue</text><text x="1115" y="628" text-anchor="middle" class="tag">[Container: Queue]</text><text x="1115" y="652" text-anchor="middle" class="desc">Events, buffering, retries</text>
+  <rect x="1390" y="150" width="210" height="85" class="box device"/><text x="1495" y="184" text-anchor="middle" class="label">Bus GIS Device</text><text x="1495" y="209" text-anchor="middle" class="tag">[External Device]</text>
+  <rect x="1390" y="340" width="210" height="85" class="box external"/><text x="1495" y="374" text-anchor="middle" class="label">PayMasterLK</text><text x="1495" y="399" text-anchor="middle" class="tag">[External System]</text>
+  <rect x="1390" y="530" width="210" height="85" class="box external"/><text x="1495" y="564" text-anchor="middle" class="label">NotifyLK</text><text x="1495" y="589" text-anchor="middle" class="tag">[External System]</text>
+  <rect x="1390" y="720" width="210" height="85" class="box external"/><text x="1495" y="754" text-anchor="middle" class="label">Mailgun</text><text x="1495" y="779" text-anchor="middle" class="tag">[External System]</text>
+  <path d="M265 190 H380" class="edge"/><text x="285" y="178" class="edgeText">Uses</text>
+  <path d="M265 495 H380" class="edge"/><text x="285" y="483" class="edgeText">Uses</text>
+  <path d="M265 782 H380" class="edge"/><text x="285" y="770" class="edgeText">Uses</text>
+  <path d="M635 242 H665 V385 H695" class="edge"/><text x="610" y="230" class="edgeText">HTTPS/JSON REST</text>
+  <path d="M635 500 H665 V410 H695" class="edge"/><text x="610" y="488" class="edgeText">HTTPS sync when online</text>
+  <path d="M635 750 H665 V435 H695" class="edge"/><text x="610" y="738" class="edgeText">HTTPS/JSON REST</text>
+  <path d="M1390 192 H1260 V360 H965" class="edge"/><text x="1270" y="180" class="edgeText">Location updates</text>
+  <path d="M965 370 H1005" class="edge"/><text x="970" y="358" class="edgeText">Reads/writes</text>
+  <path d="M965 430 H1005" class="edge"/><text x="970" y="418" class="edgeText">Live state</text>
+  <path d="M965 455 H985 V628 H1005" class="edge"/><text x="970" y="545" class="edgeText">Publishes events</text>
+  <path d="M1005 628 H965" class="edge"/><text x="958" y="616" class="edgeText">Consumes events</text>
+  <path d="M965 385 H1390" class="edge"/><text x="1130" y="373" class="edgeText">Payment API with circuit breaker</text>
+  <path d="M965 620 H1390 V572" class="edge"/><text x="1190" y="608" class="edgeText">SMS API</text>
+  <path d="M965 650 H1360 V762 H1390" class="edge"/><text x="1190" y="742" class="edgeText">Email API</text>
+</svg>

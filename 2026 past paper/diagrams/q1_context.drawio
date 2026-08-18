@@ -1,0 +1,51 @@
+<mxfile host="app.diagrams.net" modified="2026-08-18T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="q1-context-c4" name="Q1 C4 Context">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="C4 Level 1 - System Context Diagram" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="25" width="640" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Lanka Metro Transit Services Smart Transportation Platform" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="430" y="65" width="640" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="passenger" value="&lt;b&gt;Passenger&lt;/b&gt;&lt;br&gt;[Person]&lt;br&gt;Searches routes, views live buses, buys tickets, receives journey notifications" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="280" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="conductor" value="&lt;b&gt;Conductor&lt;/b&gt;&lt;br&gt;[Person]&lt;br&gt;Validates QR-code tickets using a handheld ticketing device" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="390" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="admin" value="&lt;b&gt;Transport Administrator&lt;/b&gt;&lt;br&gt;[Person]&lt;br&gt;Monitors buses, delays, pricing, reports, and device failures" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="280" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="system" value="&lt;b&gt;Lanka Metro Transit Platform&lt;/b&gt;&lt;br&gt;[Software System]&lt;br&gt;Provides passenger transport services, real-time tracking, digital ticketing, operations monitoring, and notifications" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=15;fontStyle=0;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="340" width="390" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="gis" value="&lt;b&gt;Bus GIS Tracking Device&lt;/b&gt;&lt;br&gt;[External Device]&lt;br&gt;Sends periodic bus location updates" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#6B7280;strokeColor=#4B5563;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="150" width="290" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="handheld" value="&lt;b&gt;Handheld Ticketing Device&lt;/b&gt;&lt;br&gt;[External Device]&lt;br&gt;Works offline and synchronizes ticketing transactions later" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#6B7280;strokeColor=#4B5563;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="285" width="290" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="paymaster" value="&lt;b&gt;PayMasterLK&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Processes card, mobile wallet, and LankaQR payments" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="455" width="290" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="notify" value="&lt;b&gt;NotifyLK&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Sends SMS delay notifications to affected passengers" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="595" width="290" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="mailgun" value="&lt;b&gt;Mailgun&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Sends critical payment failure email alerts" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="735" width="290" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="Uses passenger mobile app" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="passenger" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Uses handheld device" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="conductor" target="handheld"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Uses admin dashboard" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="admin" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Sends real-time location updates" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="gis" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Synchronizes ticketing transactions" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="handheld" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="Processes payments" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="system" target="paymaster"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="Requests SMS delivery" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="system" target="notify"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" value="Requests email delivery" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="system" target="mailgun"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

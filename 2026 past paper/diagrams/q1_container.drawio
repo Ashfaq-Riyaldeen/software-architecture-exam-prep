@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" modified="2026-08-18T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="q1-container-c4" name="Q1 C4 Container">
+    <mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="C4 Level 2 - Container Diagram" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="25" width="650" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="passenger" value="&lt;b&gt;Passenger&lt;/b&gt;&lt;br&gt;[Person]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="150" width="210" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="conductor" value="&lt;b&gt;Conductor&lt;/b&gt;&lt;br&gt;[Person]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="455" width="210" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="admin" value="&lt;b&gt;Transport Administrator&lt;/b&gt;&lt;br&gt;[Person]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;fontSize=14;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="740" width="210" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="boundary" value="Lanka Metro Transit Platform [Software System]" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#444444;fillColor=#F5F7FA;fontColor=#333333;fontSize=16;fontStyle=1;startSize=34;" vertex="1" parent="1">
+          <mxGeometry x="330" y="105" width="930" height="770" as="geometry"/>
+        </mxCell>
+        <mxCell id="mobile" value="&lt;b&gt;Passenger Mobile App&lt;/b&gt;&lt;br&gt;[Container: Mobile Application]&lt;br&gt;Passenger self-service, ticket purchase, route search, live bus map" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#438DD5;strokeColor=#2D6CA2;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="80" width="255" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="adminweb" value="&lt;b&gt;Admin Web Dashboard&lt;/b&gt;&lt;br&gt;[Container: Web Application]&lt;br&gt;Bus monitoring, delay tracking, pricing, reports, device failures" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#438DD5;strokeColor=#2D6CA2;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="585" width="255" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="handheld" value="&lt;b&gt;Handheld Ticketing App&lt;/b&gt;&lt;br&gt;[Container: Device Application]&lt;br&gt;QR validation, local offline store, automatic sync" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#438DD5;strokeColor=#2D6CA2;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="50" y="335" width="255" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="api" value="&lt;b&gt;REST Backend API&lt;/b&gt;&lt;br&gt;[Container: Application]&lt;br&gt;Exposes REST APIs, authenticates users, coordinates transport, ticketing, payment, and admin workflows" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="365" y="235" width="270" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="worker" value="&lt;b&gt;Background Worker&lt;/b&gt;&lt;br&gt;[Container: Application]&lt;br&gt;Processes queued location, ticket sync, payment failure, report, and notification jobs" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="365" y="455" width="270" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="&lt;b&gt;Operational Database&lt;/b&gt;&lt;br&gt;[Container: Database]&lt;br&gt;Passengers, routes, tickets, payments, pricing, reports, device status" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F5A623;strokeColor=#B96E00;fontColor=#111111;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="675" y="110" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="cache" value="&lt;b&gt;Real-Time Cache&lt;/b&gt;&lt;br&gt;[Container: Data Store]&lt;br&gt;Latest bus positions and ETA results" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F5A623;strokeColor=#B96E00;fontColor=#111111;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="675" y="290" width="220" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="queue" value="&lt;b&gt;Message Queue / Event Broker&lt;/b&gt;&lt;br&gt;[Container: Queue]&lt;br&gt;Buffers asynchronous work and supports retries" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="boundary">
+          <mxGeometry x="675" y="465" width="220" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="gis" value="&lt;b&gt;Bus GIS Device&lt;/b&gt;&lt;br&gt;[External Device]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#6B7280;strokeColor=#4B5563;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="150" width="210" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="paymaster" value="&lt;b&gt;PayMasterLK&lt;/b&gt;&lt;br&gt;[External System]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="340" width="210" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="notify" value="&lt;b&gt;NotifyLK&lt;/b&gt;&lt;br&gt;[External System]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="530" width="210" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="mailgun" value="&lt;b&gt;Mailgun&lt;/b&gt;&lt;br&gt;[External System]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="720" width="210" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="Uses" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="passenger" target="mobile"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Uses" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="conductor" target="handheld"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Uses" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="admin" target="adminweb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="HTTPS/JSON REST" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="boundary" source="mobile" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="HTTPS/JSON REST" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="boundary" source="adminweb" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="HTTPS sync when online" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="boundary" source="handheld" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="Location updates" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="gis" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" value="Reads/writes" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="boundary" source="api" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" value="Reads/writes live state" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="boundary" source="api" target="cache"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" value="Publishes async events" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="boundary" source="api" target="queue"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" value="Consumes events" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="boundary" source="queue" target="worker"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" value="Payment API with circuit breaker" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="api" target="paymaster"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" value="SMS API" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="worker" target="notify"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" value="Email API" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="worker" target="mailgun"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

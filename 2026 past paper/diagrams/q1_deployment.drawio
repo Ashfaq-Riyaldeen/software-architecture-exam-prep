@@ -1,0 +1,87 @@
+<mxfile host="app.diagrams.net" modified="2026-08-18T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="q1-deployment-c4" name="Q1 C4 Deployment">
+    <mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="C4 Deployment Diagram - Cloud Deployment" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="25" width="650" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="clients" value="Client and Field Devices" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#444444;fillColor=#F5F7FA;fontColor=#333333;fontSize=16;fontStyle=1;startSize=34;" vertex="1" parent="1">
+          <mxGeometry x="55" y="100" width="290" height="780" as="geometry"/>
+        </mxCell>
+        <mxCell id="cloud" value="Cloud Provider / Production Environment" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#444444;fillColor=#EEF6FF;fontColor=#333333;fontSize=16;fontStyle=1;startSize=34;" vertex="1" parent="1">
+          <mxGeometry x="400" y="100" width="850" height="780" as="geometry"/>
+        </mxCell>
+        <mxCell id="external" value="External SaaS Providers" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#444444;fillColor=#F7F7F7;fontColor=#333333;fontSize=16;fontStyle=1;startSize=34;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="100" width="280" height="780" as="geometry"/>
+        </mxCell>
+        <mxCell id="phone" value="&lt;b&gt;Passenger Phone&lt;/b&gt;&lt;br&gt;[Deployment Node]&lt;br&gt;Mobile app" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#438DD5;strokeColor=#2D6CA2;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="clients">
+          <mxGeometry x="40" y="85" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="browser" value="&lt;b&gt;Admin Workstation&lt;/b&gt;&lt;br&gt;[Deployment Node]&lt;br&gt;Web browser" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#438DD5;strokeColor=#2D6CA2;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="clients">
+          <mxGeometry x="40" y="260" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="handheld" value="&lt;b&gt;Conductor Handheld&lt;/b&gt;&lt;br&gt;[Deployment Node]&lt;br&gt;Ticketing app with local store" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#438DD5;strokeColor=#2D6CA2;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="clients">
+          <mxGeometry x="40" y="435" width="210" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="gis" value="&lt;b&gt;Bus GIS Device&lt;/b&gt;&lt;br&gt;[Deployment Node]&lt;br&gt;Location sender" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#6B7280;strokeColor=#4B5563;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="clients">
+          <mxGeometry x="40" y="625" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="gateway" value="&lt;b&gt;API Gateway / Load Balancer&lt;/b&gt;&lt;br&gt;[Infrastructure Node]&lt;br&gt;TLS termination, routing, rate limits" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="cloud">
+          <mxGeometry x="285" y="80" width="280" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="appcluster" value="Application Subnet / Auto Scaling Group" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#7B8794;fillColor=#FFFFFF;fontColor=#333333;fontSize=14;fontStyle=1;startSize=28;" vertex="1" parent="cloud">
+          <mxGeometry x="55" y="245" width="740" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="app1" value="&lt;b&gt;Backend App Instance 1&lt;/b&gt;&lt;br&gt;[Container Instance]&lt;br&gt;REST Backend API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="appcluster">
+          <mxGeometry x="45" y="60" width="205" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="app2" value="&lt;b&gt;Backend App Instance 2&lt;/b&gt;&lt;br&gt;[Container Instance]&lt;br&gt;REST Backend API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="appcluster">
+          <mxGeometry x="275" y="60" width="205" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="worker" value="&lt;b&gt;Worker Node&lt;/b&gt;&lt;br&gt;[Container Instance]&lt;br&gt;Async jobs and retries" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1168BD;strokeColor=#0B4F8A;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="appcluster">
+          <mxGeometry x="505" y="60" width="205" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="datasubnet" value="Data and Platform Services Subnet" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#7B8794;fillColor=#FFFFFF;fontColor=#333333;fontSize=14;fontStyle=1;startSize=28;" vertex="1" parent="cloud">
+          <mxGeometry x="55" y="515" width="740" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="&lt;b&gt;Managed Database&lt;/b&gt;&lt;br&gt;[Infrastructure Node]&lt;br&gt;Persistent operational data" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F5A623;strokeColor=#B96E00;fontColor=#111111;fontSize=13;spacing=8;" vertex="1" parent="datasubnet">
+          <mxGeometry x="45" y="60" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="cache" value="&lt;b&gt;Managed Cache&lt;/b&gt;&lt;br&gt;[Infrastructure Node]&lt;br&gt;Live locations and ETAs" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F5A623;strokeColor=#B96E00;fontColor=#111111;fontSize=13;spacing=8;" vertex="1" parent="datasubnet">
+          <mxGeometry x="270" y="60" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="queue" value="&lt;b&gt;Managed Queue&lt;/b&gt;&lt;br&gt;[Infrastructure Node]&lt;br&gt;Async events and retries" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="datasubnet">
+          <mxGeometry x="495" y="60" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="logs" value="&lt;b&gt;Monitoring and Logging&lt;/b&gt;&lt;br&gt;[Infrastructure Node]&lt;br&gt;Metrics, logs, operational alerts" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#6A1B9A;strokeColor=#4A136B;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="cloud">
+          <mxGeometry x="285" y="735" width="280" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="paymaster" value="&lt;b&gt;PayMasterLK&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Payment processing" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="external">
+          <mxGeometry x="35" y="180" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="notify" value="&lt;b&gt;NotifyLK&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;SMS delivery" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="external">
+          <mxGeometry x="35" y="405" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="mailgun" value="&lt;b&gt;Mailgun&lt;/b&gt;&lt;br&gt;[External System]&lt;br&gt;Email delivery" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#666666;strokeColor=#444444;fontColor=#FFFFFF;fontSize=13;spacing=8;" vertex="1" parent="external">
+          <mxGeometry x="35" y="630" width="210" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="HTTPS over internet" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="phone" target="gateway"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="HTTPS over internet" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="browser" target="gateway"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="HTTPS sync when online" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="handheld" target="gateway"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Location updates" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="gis" target="gateway"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Routes traffic" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="cloud" source="gateway" target="app1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="Routes traffic" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="cloud" source="gateway" target="app2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="Reads/writes" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="cloud" source="app1" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" value="Uses cache" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="cloud" source="app2" target="cache"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" value="Publishes async jobs" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="cloud" source="app2" target="queue"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" value="Consumes jobs" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="cloud" source="queue" target="worker"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" value="Sends logs and metrics" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="cloud" source="worker" target="logs"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" value="Payment API" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="app1" target="paymaster"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" value="SMS API" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="worker" target="notify"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" value="Email API" style="endArrow=block;html=1;rounded=0;strokeWidth=2;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="worker" target="mailgun"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

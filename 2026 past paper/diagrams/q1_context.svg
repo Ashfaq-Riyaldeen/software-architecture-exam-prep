@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker>
+    <style>
+      text{font-family:Arial,sans-serif}.title{font-size:24px;font-weight:700;fill:#222}.subtitle{font-size:16px;fill:#333}.box{rx:8;ry:8;stroke-width:2}.person{fill:#08427b;stroke:#052e56}.system{fill:#1168bd;stroke:#0b4f8a}.external{fill:#666;stroke:#444}.device{fill:#6b7280;stroke:#4b5563}.label{font-size:16px;font-weight:700;fill:#fff}.tag{font-size:13px;fill:#fff}.desc{font-size:12px;fill:#fff}.edge{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arrow)}.edgeText{font-size:12px;fill:#222}
+    </style>
+  </defs>
+  <text x="750" y="50" text-anchor="middle" class="title">C4 Level 1 - System Context Diagram</text>
+  <text x="750" y="80" text-anchor="middle" class="subtitle">Lanka Metro Transit Services Smart Transportation Platform</text>
+  <rect x="80" y="150" width="280" height="120" class="box person"/><text x="220" y="183" text-anchor="middle" class="label">Passenger</text><text x="220" y="208" text-anchor="middle" class="tag">[Person]</text><text x="220" y="233" text-anchor="middle" class="desc">Searches routes, tracks buses,</text><text x="220" y="253" text-anchor="middle" class="desc">buys tickets, receives alerts</text>
+  <rect x="80" y="390" width="280" height="110" class="box person"/><text x="220" y="423" text-anchor="middle" class="label">Conductor</text><text x="220" y="448" text-anchor="middle" class="tag">[Person]</text><text x="220" y="473" text-anchor="middle" class="desc">Validates QR-code tickets</text>
+  <rect x="80" y="620" width="280" height="120" class="box person"/><text x="220" y="653" text-anchor="middle" class="label">Transport Administrator</text><text x="220" y="678" text-anchor="middle" class="tag">[Person]</text><text x="220" y="703" text-anchor="middle" class="desc">Monitors buses, reports,</text><text x="220" y="723" text-anchor="middle" class="desc">pricing, and failures</text>
+  <rect x="560" y="340" width="390" height="150" class="box system"/><text x="755" y="377" text-anchor="middle" class="label">Lanka Metro Transit Platform</text><text x="755" y="404" text-anchor="middle" class="tag">[Software System]</text><text x="755" y="431" text-anchor="middle" class="desc">Passenger transport services, real-time tracking,</text><text x="755" y="451" text-anchor="middle" class="desc">digital ticketing, operations monitoring, notifications</text>
+  <rect x="1120" y="150" width="290" height="105" class="box device"/><text x="1265" y="183" text-anchor="middle" class="label">Bus GIS Tracking Device</text><text x="1265" y="208" text-anchor="middle" class="tag">[External Device]</text><text x="1265" y="233" text-anchor="middle" class="desc">Sends periodic bus locations</text>
+  <rect x="1120" y="285" width="290" height="115" class="box device"/><text x="1265" y="318" text-anchor="middle" class="label">Handheld Ticketing Device</text><text x="1265" y="343" text-anchor="middle" class="tag">[External Device]</text><text x="1265" y="368" text-anchor="middle" class="desc">Works offline and syncs later</text>
+  <rect x="1120" y="455" width="290" height="105" class="box external"/><text x="1265" y="488" text-anchor="middle" class="label">PayMasterLK</text><text x="1265" y="513" text-anchor="middle" class="tag">[External System]</text><text x="1265" y="538" text-anchor="middle" class="desc">Processes digital payments</text>
+  <rect x="1120" y="595" width="290" height="105" class="box external"/><text x="1265" y="628" text-anchor="middle" class="label">NotifyLK</text><text x="1265" y="653" text-anchor="middle" class="tag">[External System]</text><text x="1265" y="678" text-anchor="middle" class="desc">Sends SMS notifications</text>
+  <rect x="1120" y="735" width="290" height="105" class="box external"/><text x="1265" y="768" text-anchor="middle" class="label">Mailgun</text><text x="1265" y="793" text-anchor="middle" class="tag">[External System]</text><text x="1265" y="818" text-anchor="middle" class="desc">Sends email alerts</text>
+  <path d="M360 210 H460 V378 H560" class="edge"/><text x="390" y="198" class="edgeText">Uses passenger mobile app</text>
+  <path d="M360 680 H460 V452 H560" class="edge"/><text x="390" y="668" class="edgeText">Uses admin dashboard</text>
+  <path d="M360 445 H1120" class="edge"/><text x="470" y="433" class="edgeText">Uses handheld device</text>
+  <path d="M1120 202 H960 V370 H950" class="edge"/><text x="965" y="190" class="edgeText">Sends real-time location updates</text>
+  <path d="M1120 342 H1005 V405 H950" class="edge"/><text x="970" y="330" class="edgeText">Synchronizes ticketing transactions</text>
+  <path d="M950 420 H1040 V508 H1120" class="edge"/><text x="980" y="495" class="edgeText">Processes payments</text>
+  <path d="M950 445 H1030 V648 H1120" class="edge"/><text x="985" y="635" class="edgeText">Requests SMS delivery</text>
+  <path d="M950 470 H1020 V788 H1120" class="edge"/><text x="985" y="775" class="edgeText">Requests email delivery</text>
+</svg>
