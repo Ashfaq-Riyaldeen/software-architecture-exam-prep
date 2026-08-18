@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="680" viewBox="0 0 1450 680">
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker><style>text{font-family:Arial,sans-serif}.title{font-size:24px;font-weight:700;fill:#222}.box{rx:8;ry:8;stroke-width:2}.source{fill:#438dd5;stroke:#2d6ca2}.process{fill:#1168bd;stroke:#0b4f8a}.data{fill:#f5a623;stroke:#b96e00}.ml{fill:#2e7d32;stroke:#1b5e20}.label{font-size:14px;font-weight:700;fill:#fff}.tag{font-size:11px;fill:#fff}.black{fill:#111}.edge{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arrow)}.edgeText{font-size:12px;fill:#222}</style></defs>
+  <text x="725" y="50" text-anchor="middle" class="title">Data Flow Architecture - Recommendation Data Ingestion</text>
+  <rect x="45" y="270" width="190" height="90" class="box source"/><text x="140" y="303" text-anchor="middle" class="label">E-commerce App</text><text x="140" y="328" text-anchor="middle" class="tag">Views, cart additions, purchases</text>
+  <rect x="300" y="270" width="190" height="90" class="box process"/><text x="395" y="303" text-anchor="middle" class="label">Event Collector</text><text x="395" y="328" text-anchor="middle" class="tag">Fetch/receive interactions</text>
+  <rect x="555" y="270" width="190" height="90" class="box process"/><text x="650" y="303" text-anchor="middle" class="label">Validate and Enrich</text><text x="650" y="328" text-anchor="middle" class="tag">User/product metadata</text>
+  <rect x="810" y="170" width="200" height="90" class="box data"/><text x="910" y="203" text-anchor="middle" class="label black">Raw Event Store</text><text x="910" y="228" text-anchor="middle" class="tag black">Data lake / event storage</text>
+  <rect x="810" y="380" width="200" height="90" class="box process"/><text x="910" y="413" text-anchor="middle" class="label">Feature Preparation</text><text x="910" y="438" text-anchor="middle" class="tag">Clean, aggregate, transform</text>
+  <rect x="1080" y="380" width="200" height="90" class="box data"/><text x="1180" y="413" text-anchor="middle" class="label black">Feature Store</text><text x="1180" y="438" text-anchor="middle" class="tag black">ML-ready user features</text>
+  <rect x="1080" y="170" width="200" height="90" class="box ml"/><text x="1180" y="203" text-anchor="middle" class="label">ML Training Pipeline</text><text x="1180" y="228" text-anchor="middle" class="tag">Recommendation models</text>
+  <path d="M235 315 H300" class="edge"/><text x="245" y="303" class="edgeText">Interaction events</text>
+  <path d="M490 315 H555" class="edge"/><text x="500" y="303" class="edgeText">Raw events</text>
+  <path d="M745 300 H775 V215 H810" class="edge"/><text x="760" y="203" class="edgeText">Store raw</text>
+  <path d="M745 330 H775 V425 H810" class="edge"/><text x="760" y="413" class="edgeText">Prepare stream/batch</text>
+  <path d="M1010 425 H1080" class="edge"/><text x="1020" y="413" class="edgeText">Features</text>
+  <path d="M1180 380 V260" class="edge"/><text x="1190" y="330" class="edgeText">Train/use model</text>
+</svg>
